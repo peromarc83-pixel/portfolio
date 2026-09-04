@@ -1,0 +1,127 @@
+.logo {
+  --logo-ball: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--color-ink);
+}
+
+/* ---------- marque : mini bille acier, même recette que les sphères de compétences ---------- */
+.logo__mark {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--logo-ball);
+  height: var(--logo-ball);
+  flex: none;
+}
+
+.logo__mark::before {
+  content: '';
+  position: absolute;
+  inset: -34%;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--color-primary) 40%, transparent), transparent 70%);
+  filter: blur(10px);
+  animation: logo-glow 4.5s ease-in-out infinite;
+}
+
+.logo__mark::after {
+  content: '';
+  position: absolute;
+  inset: -14%;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    color-mix(in srgb, var(--color-primary) 55%, #fff) 0%,
+    color-mix(in srgb, var(--color-primary) 85%, #05070a) 25%,
+    color-mix(in srgb, var(--color-primary) 55%, #fff) 50%,
+    color-mix(in srgb, var(--color-primary) 85%, #05070a) 75%,
+    color-mix(in srgb, var(--color-primary) 55%, #fff) 100%
+  );
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
+  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 2px));
+  filter: drop-shadow(0 0 5px color-mix(in srgb, var(--color-primary) 65%, transparent));
+  animation: logo-halo-spin 8s linear infinite;
+}
+
+.logo__ball {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--gradient-badge);
+  box-shadow:
+    inset 0 -6px 10px rgba(0, 0, 0, 0.55),
+    inset 0 5px 8px rgba(255, 255, 255, 0.22),
+    0 6px 14px rgba(0, 0, 0, 0.45);
+}
+
+.logo__ball::before {
+  content: '';
+  position: absolute;
+  width: 46%;
+  height: 46%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0) 70%);
+  mix-blend-mode: screen;
+  animation: logo-sheen 6s ease-in-out infinite;
+}
+
+.logo__mark-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.logo__mark-icon svg {
+  width: 52%;
+  height: 52%;
+  color: #fff;
+  filter:
+    drop-shadow(0 0 2px rgba(0, 0, 0, 0.7))
+    drop-shadow(0 0 6px color-mix(in srgb, var(--color-primary) 70%, transparent));
+}
+
+@keyframes logo-halo-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes logo-glow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.06); }
+}
+
+@keyframes logo-sheen {
+  0%   { top: 6%;  left: 12%; opacity: 0.95; }
+  35%  { top: 8%;  left: 58%; opacity: 0.5; }
+  50%  { top: 42%; left: 68%; opacity: 0.22; }
+  65%  { top: 70%; left: 52%; opacity: 0.5; }
+  100% { top: 6%;  left: 12%; opacity: 0.95; }
+}
+
+/* ---------- wordmark ---------- */
+.logo__wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4em;
+}
+
+.logo__bracket {
+  font-family: var(--font-mono);
+  color: var(--color-ink-soft);
+  font-weight: 600;
+}
+
+.logo__name {
+  color: var(--color-ink);
+}

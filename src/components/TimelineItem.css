@@ -1,0 +1,56 @@
+.timeline-item {
+  padding: var(--space-6) 0;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.timeline-item:first-child {
+  padding-top: 0;
+}
+
+.timeline-item--last {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.timeline-item__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-1);
+}
+
+.timeline-item__version {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--hue, var(--color-primary));
+}
+
+.timeline-item__badge {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--color-success);
+  color: var(--color-bg);
+}
+
+.timeline-item__year {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--color-ink-soft);
+  margin-left: auto;
+}
+
+.timeline-item__title {
+  margin-bottom: var(--space-1);
+}
+
+.timeline-item__description {
+  font-size: 0.95rem;
+  max-width: 580px;
+}

@@ -1,0 +1,45 @@
+.about__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* en-tête compact : badge + titre alignés, façon en-tête de profil */
+.about__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.about__header .about__badge {
+  --badge-size: 64px;
+}
+
+.about__header .section-title {
+  margin-bottom: 0;
+  max-width: none;
+}
+
+.about__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  border-top: 1px solid var(--color-line);
+  padding-top: var(--space-6);
+}
+
+.about__body p {
+  max-width: 640px;
+}
+
+.about__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+@media (min-width: 1024px) {
+  .about__header .about__badge {
+    --badge-size: 92px;
+  }
+}

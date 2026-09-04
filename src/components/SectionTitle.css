@@ -1,0 +1,22 @@
+.section-title {
+  max-width: 640px;
+  margin-bottom: var(--space-8);
+}
+
+.section-title__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--space-2);
+}
+
+.section-title__title {
+  margin-bottom: var(--space-2);
+}
+
+.section-title__subtitle {
+  font-size: 1.05rem;
+}

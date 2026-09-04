@@ -1,0 +1,71 @@
+:root {
+  /* Couleurs — thème sombre construit à partir du bleu nuit #174161 */
+  --color-ink: #edf1fb; /* texte principal / structure (clair sur fond sombre) */
+  --color-ink-soft: #9fb0d1; /* texte secondaire */
+  --color-primary: #7ec2ee; /* dominante claire : liens, icônes, titres accent, focus */
+  --color-primary-strong: #1f5c86; /* bleu soutenu : fonds pleins, texte sur fond clair */
+  --color-primary-soft: rgba(255, 255, 255, 0.08); /* fond teinté clair (fallback photos, badges) */
+  --color-accent: #e2934f; /* accent chaud 5-10% : CTA secondaires, badges */
+  --color-success: #52d69a; /* validations, scores "au vert" */
+  --color-danger: #ff6b6a; /* erreurs de formulaire */
+  --color-bg: #12314c; /* surface unie de base (champs, aplats) */
+  --color-wash: rgba(255, 255, 255, 0.045); /* voile clair : alterne les sections */
+  --color-line: rgba(255, 255, 255, 0.16); /* bordures, séparateurs */
+  --surface: rgba(255, 255, 255, 0.06); /* fond des puces / champs posés sur le dégradé */
+  --surface-strong: rgba(255, 255, 255, 0.1); /* variante hover/active d'une surface */
+  --surface-tint: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.02)
+  ); /* fond teinté : navbar, footer */
+
+  /* Dégradé de fond de page, construit à partir de #174161 */
+  --gradient-page:
+    radial-gradient(1100px 650px at 12% 4%, rgba(63, 148, 199, 0.3), transparent 55%),
+    radial-gradient(900px 600px at 92% 10%, rgba(45, 125, 171, 0.22), transparent 55%),
+    linear-gradient(180deg, #0b2135 0%, #174161 28%, #1f5c86 50%, #174161 72%, #0b2135 100%);
+
+  /* Dégradé des boutons / éléments d'appel à l'action, même famille de bleus */
+  --gradient-cta: linear-gradient(135deg, #174161 0%, #1f5c86 55%, #2d7dab 100%);
+  --gradient-cta-hover: linear-gradient(135deg, #123249 0%, #184a6d 55%, #235e83 100%);
+
+  /* Dégradé du badge <MD> : bille du logo, sphères de compétences, fonds de bouton */
+  --gradient-badge:
+    radial-gradient(circle at 68% 55%, #254669 0%, #1c3a63 35%, #142c52 62%, #0e2439 100%),
+    #0b2135;
+  --gradient-badge-hover:
+    radial-gradient(circle at 68% 55%, #2d5277 0%, #234677 35%, #18325c 62%, #102a42 100%),
+    #102a42;
+  /* même famille de bleus, éclaircie pour rester lisible en dégradé de texte (background-clip: text) */
+  --gradient-badge-line: linear-gradient(
+    120deg,
+    #4f9bd9 0%,
+    #bfe4ff 15%,
+    #4f9bd9 30%,
+    #2d6fae 50%,
+    #4f9bd9 70%,
+    #bfe4ff 85%,
+    #4f9bd9 100%
+  );
+
+  /* Typographie */
+  --font-display: 'Space Grotesk', Georgia, sans-serif; /* titres */
+  --font-body: 'Inter', system-ui, sans-serif; /* corps */
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace; /* code, tags, chiffres */
+
+  /* Rayons */
+  --radius-card: 12px;
+  --radius-btn: 9px;
+  --radius-pill: 999px;
+
+  /* Espacements (échelle) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* Ombre */
+  --shadow-card: 0 18px 40px rgba(0, 0, 0, 0.35);
+}

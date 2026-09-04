@@ -1,0 +1,139 @@
+.contact__inner {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+}
+
+.contact__socials {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}
+
+.contact__socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.contact__socials a:hover {
+  text-decoration: underline;
+}
+
+/* Liens de contact encadrés : e-mail, GitHub (noir), LinkedIn (bleu) — même gabarit */
+.contact__socials a.contact__email,
+.contact__socials a.contact__social {
+  align-self: flex-start;
+  width: 15rem;
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-btn);
+  transition:
+    transform 0.15s ease,
+    filter 0.15s ease;
+}
+
+.contact__socials a.contact__email:hover,
+.contact__social:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.contact__social:hover {
+  filter: brightness(1.1);
+}
+
+/* E-mail, GitHub, LinkedIn : libellés en blanc */
+.contact__socials a.contact__email,
+.contact__socials a.contact__social {
+  color: #fff;
+}
+
+.contact__social--github {
+  background: #181717;
+}
+
+.contact__social--linkedin {
+  background: #0a66c2;
+}
+
+/* Adresse e-mail : même fond que les libellés Front-end / Back-end */
+.contact__socials a.contact__email {
+  background: var(--surface-tint);
+  border-color: var(--color-line);
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.contact__field label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.contact__field input,
+.contact__field textarea {
+  padding: var(--space-3);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-btn);
+  background: var(--surface);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  resize: vertical;
+}
+
+.contact__field input[aria-invalid='true'],
+.contact__field textarea[aria-invalid='true'] {
+  border-color: var(--color-danger);
+}
+
+.contact__error {
+  font-size: 0.8rem;
+  color: var(--color-danger);
+}
+
+.contact__status {
+  min-height: 1.2em;
+  font-size: 0.9rem;
+  color: var(--color-success);
+}
+
+/* Honeypot : invisible pour les humains, présent pour les robots */
+.contact__honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+.contact__spinner {
+  animation: contact-spin 0.8s linear infinite;
+}
+
+@keyframes contact-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact__inner {
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--space-8);
+  }
+}

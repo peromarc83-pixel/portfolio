@@ -1,0 +1,107 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid var(--color-line);
+}
+
+/* fond flouté sur un pseudo-élément : un backdrop-filter posé directement sur
+   .navbar créerait un bloc de positionnement pour .navbar__menu (position: fixed)
+   et casserait son plein-écran en mobile */
+.navbar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: rgba(11, 33, 53, 0.6);
+  background-image: var(--surface-tint);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.navbar__logo {
+  display: inline-flex;
+}
+
+.navbar__burger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: var(--space-2);
+  cursor: pointer;
+  z-index: 60;
+}
+
+@media (min-width: 1024px) {
+  .navbar__burger {
+    display: none;
+  }
+}
+
+.navbar__menu {
+  position: fixed;
+  inset: 64px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  background-color: rgba(11, 33, 53, 0.6);
+  background-image: var(--surface-tint);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+}
+
+.navbar__menu--open {
+  transform: translateX(0);
+}
+
+.navbar__link {
+  background: transparent;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.navbar__link:hover,
+.navbar__link[aria-current='true'] {
+  color: var(--color-primary);
+}
+
+@media (min-width: 1024px) {
+  .navbar__menu {
+    position: static;
+    flex-direction: row;
+    gap: var(--space-6);
+    transform: none;
+    background: transparent;
+  }
+
+  .navbar__link {
+    font-size: 0.95rem;
+    font-weight: 500;
+    font-family: var(--font-body);
+    padding-bottom: 2px;
+    border-bottom: 2px solid transparent;
+  }
+
+  .navbar__link:hover {
+    color: var(--color-primary);
+  }
+
+  .navbar__link[aria-current='true'] {
+    border-bottom-color: var(--color-primary);
+  }
+}

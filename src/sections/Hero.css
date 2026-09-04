@@ -1,0 +1,269 @@
+.hero {
+  padding-top: var(--space-8);
+}
+
+/* ---------- panneau tech : bordure, grille de fond ---------- */
+.hero__panel {
+  position: relative;
+  border: 1px solid var(--color-line);
+  border-radius: 20px;
+  overflow: hidden;
+  padding: clamp(28px, 6vw, 56px);
+  background:
+    radial-gradient(700px 420px at 85% -10%, rgba(63, 148, 199, 0.22), transparent 55%),
+    linear-gradient(180deg, #0d2740 0%, #123249 55%, #0b2135 100%);
+}
+
+.hero__panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 60% 40%, #000 40%, transparent 82%);
+  mask-image: radial-gradient(ellipse 80% 70% at 60% 40%, #000 40%, transparent 82%);
+}
+
+.hero__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: var(--space-8);
+  text-align: center;
+}
+
+/* ---------- prompt terminal (remplace l'eyebrow) ---------- */
+.hero__prompt {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  background: var(--surface-strong);
+  border: 1px solid var(--color-line);
+  border-radius: 7px;
+  padding: 6px 12px;
+  margin-bottom: var(--space-4);
+}
+
+.hero__prompt-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-success);
+  flex-shrink: 0;
+}
+
+.hero__prompt::after {
+  content: '';
+  width: 6px;
+  height: 13px;
+  background: var(--color-primary);
+  animation: hero-caret-blink 1s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes hero-caret-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.hero__title {
+  margin-bottom: var(--space-4);
+}
+
+.hero__title-accent {
+  color: var(--color-primary);
+}
+
+.hero__tagline {
+  font-size: 1.1rem;
+  max-width: 480px;
+  margin-bottom: var(--space-6);
+}
+
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+/* ---------- ligne de stats façon barre d'état d'IDE ---------- */
+.hero__statline {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-2);
+}
+
+.hero__stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-ink-soft);
+  background: var(--surface);
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  padding: 5px 11px;
+}
+
+.hero__stat-bar {
+  display: block;
+  width: 34px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--color-line);
+  overflow: hidden;
+  margin-left: 2px;
+}
+
+.hero__stat-bar span {
+  display: block;
+  height: 100%;
+  background: var(--color-primary);
+}
+
+.hero__media {
+  flex-shrink: 0;
+}
+
+/* ---------- cadre "devtools" autour du badge ---------- */
+.hero__badge-frame {
+  position: relative;
+}
+
+.hero__corner {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-primary);
+}
+
+.hero__corner--tl {
+  top: -10px;
+  left: -10px;
+  border-right: none;
+  border-bottom: none;
+  border-radius: 4px 0 0 0;
+}
+
+.hero__corner--tr {
+  top: -10px;
+  right: -10px;
+  border-left: none;
+  border-bottom: none;
+  border-radius: 0 4px 0 0;
+}
+
+.hero__corner--bl {
+  bottom: -10px;
+  left: -10px;
+  border-right: none;
+  border-top: none;
+  border-radius: 0 0 0 4px;
+}
+
+.hero__corner--br {
+  bottom: -10px;
+  right: -10px;
+  border-left: none;
+  border-top: none;
+  border-radius: 0 0 4px 0;
+}
+
+.hero__float-tag {
+  position: absolute;
+  display: none;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-ink);
+  background: var(--surface-strong);
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  padding: 5px 12px;
+  white-space: nowrap;
+}
+
+.hero__float-tag::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--tag-color, var(--color-primary));
+}
+
+.hero__float-tag--react {
+  top: 6%;
+  right: -18%;
+  --tag-color: #61dafb;
+}
+
+.hero__float-tag--node {
+  top: 38%;
+  right: -27%;
+  --tag-color: #7fd67e;
+}
+
+.hero__float-tag--a11y {
+  bottom: 6%;
+  right: -14%;
+  --tag-color: #c79ff0;
+}
+
+.hero__badge {
+  --badge-size: 180px;
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    padding-top: var(--space-8);
+    min-height: calc(100svh - 64px);
+    display: flex;
+    align-items: center;
+  }
+
+  .hero__panel {
+    width: 100%;
+  }
+
+  .hero__inner {
+    flex-direction: row;
+    justify-content: center;
+    gap: clamp(2.5rem, 6vw, 5rem);
+    text-align: left;
+  }
+
+  .hero__text {
+    max-width: 560px;
+  }
+
+  .hero__ctas {
+    justify-content: flex-start;
+  }
+
+  .hero__statline {
+    justify-content: flex-start;
+  }
+
+  .hero__float-tag {
+    display: inline-flex;
+  }
+
+  .hero__badge {
+    --badge-size: 260px;
+  }
+}

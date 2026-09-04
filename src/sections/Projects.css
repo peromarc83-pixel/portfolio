@@ -1,0 +1,42 @@
+/* même dégradé que l'aperçu des dispositions alternatives */
+.projects {
+  background:
+    radial-gradient(1100px 650px at 12% 0%, rgba(63, 148, 199, 0.22), transparent 55%),
+    linear-gradient(180deg, #0b2135 0%, #123249 30%, #174161 60%, #0b2135 100%);
+}
+
+/* carrousel horizontal : cartes agrandies, défilement au lieu d'empiler */
+.projects__showcase {
+  display: flex;
+  gap: var(--space-6);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: var(--space-3);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line) transparent;
+}
+
+.projects__showcase::-webkit-scrollbar {
+  height: 6px;
+}
+
+.projects__showcase::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 999px;
+}
+
+.projects__showcase .project-card {
+  flex: 0 0 auto;
+  width: min(88vw, 480px);
+  scroll-snap-align: start;
+}
+
+@media (min-width: 1024px) {
+  .projects .container {
+    max-width: 1320px;
+  }
+
+  .projects__showcase .project-card {
+    width: 520px;
+  }
+}

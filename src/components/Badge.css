@@ -1,0 +1,62 @@
+.badge {
+  --badge-size: 180px;
+  position: relative;
+  width: var(--badge-size);
+  height: var(--badge-size);
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--gradient-badge);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: calc(var(--badge-size) * 0.03);
+  flex-shrink: 0;
+}
+
+/* monogramme "MD" : le D chevauche le M, avec une entaille diagonale à la jonction */
+.badge__mono {
+  position: relative;
+  display: flex;
+  font-family: 'Poppins', var(--font-display), sans-serif;
+  font-weight: 800;
+  font-size: calc(var(--badge-size) * 0.4);
+  line-height: 0.8;
+  color: #fff;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.5));
+}
+
+.badge__d {
+  margin-left: calc(var(--badge-size) * -0.075);
+}
+
+.badge__mono::after {
+  content: '';
+  position: absolute;
+  left: 52%;
+  top: 38%;
+  width: 4%;
+  height: 64%;
+  background: radial-gradient(circle at 68% 55%, #142c52 0%, #0e2439 100%);
+  transform: rotate(28deg);
+  transform-origin: top center;
+}
+
+.badge__word {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: calc(var(--badge-size) * 0.115);
+  letter-spacing: 0.01em;
+  color: #fff;
+}
+
+/* Variante icône : même dégradé, avec le repère "</>" d'origine */
+.badge--icon .badge__icon {
+  width: 42%;
+  height: 42%;
+  color: #fff;
+  filter:
+    drop-shadow(0 0 3px rgba(0, 0, 0, 0.65))
+    drop-shadow(0 0 10px rgba(126, 194, 238, 0.55));
+}
