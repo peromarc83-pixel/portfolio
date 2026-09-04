@@ -3,10 +3,21 @@
   publish = "dist"
   functions = "netlify/functions"
 
+# URL propres pour les pages légales (fichiers .html dans public/)
+[[redirects]]
+  from = "/mentions-legales"
+  to = "/mentions-legales.html"
+  status = 200
+
+[[redirects]]
+  from = "/confidentialite"
+  to = "/confidentialite.html"
+  status = 200
+
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'"
     Strict-Transport-Security = "max-age=63072000; includeSubDomains; preload"
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "DENY"

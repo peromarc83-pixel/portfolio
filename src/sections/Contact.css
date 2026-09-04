@@ -111,6 +111,16 @@
   color: var(--color-success);
 }
 
+.contact__consent {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  color: var(--color-ink-soft);
+}
+
+.contact__consent a {
+  color: var(--color-primary);
+}
+
 /* Honeypot : invisible pour les humains, présent pour les robots */
 .contact__honeypot {
   position: absolute;

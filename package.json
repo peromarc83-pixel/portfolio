@@ -11,7 +11,8 @@
     "test:watch": "vitest",
     "preview": "vite preview",
     "images": "node scripts/optimize-images.mjs",
-    "shots": "node scripts/capture-shots.mjs"
+    "shots": "node scripts/capture-shots.mjs",
+    "fonts": "node scripts/generate-fonts.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.34.0",

@@ -199,6 +199,12 @@ function Contact() {
             {status === 'success' && 'Message envoyé, merci ! Je vous réponds rapidement.'}
             {status === 'error' && "Une erreur est survenue, merci de réessayer ou de m'écrire directement."}
           </p>
+
+          <p className="contact__consent">
+            En envoyant ce formulaire, vous acceptez que vos coordonnées soient utilisées
+            pour répondre à votre demande.{' '}
+            <a href="/confidentialite">En savoir plus</a>.
+          </p>
         </form>
       </div>
     </section>
