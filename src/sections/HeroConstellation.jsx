@@ -99,6 +99,14 @@ function HeroConstellation() {
 
   return (
     <section id="accueil" className="hero-constellation section">
+      <img
+        className="hero-constellation__bg"
+        src="/images/hero-circuit.webp"
+        alt=""
+        aria-hidden="true"
+      />
+      <div className="hero-constellation__veil" aria-hidden="true"></div>
+
       <div className="container hero-constellation__inner">
         <div className="hero-constellation__text">
           <p className="hero-constellation__hello">Hello !</p>
@@ -170,6 +178,15 @@ function HeroConstellation() {
           </div>
         </div>
       </div>
+
+      <a
+        className="hero-constellation__credit"
+        href="https://unsplash.com/@brechtcorbeel"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Photo : Brecht Corbeel · Unsplash
+      </a>
     </section>
   )
 }
