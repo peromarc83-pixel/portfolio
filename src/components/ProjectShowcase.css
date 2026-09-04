@@ -1,0 +1,214 @@
+/* ---------- Bandeau de sélection ---------- */
+.project-showcase__rail {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.project-showcase__tile {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+  cursor: pointer;
+  text-align: left;
+  transition:
+    border-color 0.18s ease,
+    background-color 0.18s ease,
+    transform 0.18s ease;
+}
+
+.project-showcase__tile:hover {
+  background: var(--surface-strong);
+  transform: translateY(-1px);
+}
+
+.project-showcase__tile[aria-pressed='true'] {
+  background: var(--surface-strong);
+  border-color: var(--tile-accent, var(--color-primary));
+  box-shadow: 0 0 0 1px var(--tile-accent, var(--color-primary)) inset;
+}
+
+.project-showcase__thumb {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 9px;
+  border: 1px solid var(--color-line);
+  object-fit: cover;
+}
+
+.project-showcase__thumb--fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--color-primary);
+  background: var(--color-primary-soft);
+}
+
+.project-showcase__tile-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.project-showcase__tile-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.92rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.project-showcase__tile-tag {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--tile-accent, var(--color-ink-soft));
+}
+
+/* ---------- Panneau de détail ---------- */
+.project-showcase__panel {
+  background: var(--surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.project-showcase__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.project-showcase__title {
+  font-size: 1.3rem;
+  margin: 0 0 4px;
+}
+
+.project-showcase__subtitle {
+  margin: 0;
+  color: var(--color-ink-soft);
+  max-width: 48ch;
+}
+
+.project-showcase__links {
+  display: flex;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.project-showcase__link-btn {
+  padding: var(--space-2) var(--space-4);
+  font-size: 0.85rem;
+}
+
+.project-showcase__stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+}
+
+.project-showcase__stack li {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-primary);
+  background: var(--surface-strong);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-pill);
+  padding: 0.24rem 0.65rem;
+}
+
+.project-showcase__media {
+  aspect-ratio: 16 / 9;
+  border-radius: 9px;
+  overflow: hidden;
+  border: 1px solid var(--color-line);
+  background: var(--color-wash);
+}
+
+.project-showcase__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.project-showcase__grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--space-6);
+}
+
+.project-showcase__grid--full {
+  grid-template-columns: 1fr;
+}
+
+.project-showcase__highlights {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--color-ink-soft);
+  font-size: 0.92rem;
+}
+
+.project-showcase__highlights li {
+  margin: 0.4rem 0;
+}
+
+.project-showcase__metrics {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  align-content: start;
+}
+
+.project-showcase__metrics li {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  background: rgba(0, 0, 0, 0.18);
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+}
+
+.project-showcase__metric-label {
+  font-size: 0.78rem;
+  color: var(--color-ink-soft);
+}
+
+.project-showcase__metric-value {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--color-success);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 720px) {
+  .project-showcase__grid {
+    grid-template-columns: 1fr;
+  }
+}

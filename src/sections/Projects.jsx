@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import SectionTitle from '@/components/SectionTitle.jsx'
 import FilterBar from '@/components/FilterBar.jsx'
-import ProjectCard from '@/components/ProjectCard.jsx'
+import ProjectShowcase from '@/components/ProjectShowcase.jsx'
 import { projects } from '@/data/projects.js'
 import './Projects.css'
 
@@ -27,11 +27,7 @@ function Projects() {
 
         <FilterBar filters={FILTERS} activeFilter={activeFilter} onChange={setActiveFilter} />
 
-        <div className="projects__showcase" aria-live="polite">
-          {filteredProjects.map((project) => (
-            <ProjectCard key={project.id} {...project} />
-          ))}
-        </div>
+        <ProjectShowcase projects={filteredProjects} />
       </div>
     </section>
   )
