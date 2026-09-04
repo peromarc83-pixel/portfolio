@@ -24,6 +24,23 @@
     linear-gradient(180deg, #0d2740 0%, #123249 55%, #0b2135 100%);
 }
 
+:root[data-theme='constellation'] .su {
+  --su-line: #3a341f;
+  --su-line-soft: #2c281980;
+  --su-ink: #f5f3ee;
+  --su-ink-soft: #b8b6af;
+}
+
+:root[data-theme='constellation'] .su__panel {
+  background:
+    radial-gradient(700px 420px at 85% -10%, rgba(232, 196, 90, 0.12), transparent 55%),
+    linear-gradient(180deg, #17130a 0%, #12100a 55%, #08080a 100%);
+}
+
+:root[data-theme='constellation'] .su__readout {
+  background: #0e0c08;
+}
+
 .su__panel::before {
   content: '';
   position: absolute;

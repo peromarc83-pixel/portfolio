@@ -7,6 +7,10 @@
   padding-block: var(--space-6);
 }
 
+:root[data-theme='constellation'] .footer {
+  background-color: rgba(8, 8, 10, 0.7);
+}
+
 .footer__inner {
   display: flex;
   flex-direction: column;

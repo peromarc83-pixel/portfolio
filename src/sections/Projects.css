@@ -5,6 +5,12 @@
     linear-gradient(180deg, #0b2135 0%, #123249 30%, #174161 60%, #0b2135 100%);
 }
 
+:root[data-theme='constellation'] .projects {
+  background:
+    radial-gradient(1100px 650px at 12% 0%, rgba(232, 196, 90, 0.16), transparent 55%),
+    linear-gradient(180deg, #08080a 0%, #12100a 30%, #17130a 60%, #08080a 100%);
+}
+
 @media (min-width: 1024px) {
   .projects .container {
     max-width: 1320px;

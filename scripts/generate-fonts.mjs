@@ -17,7 +17,8 @@ const OUT_DIR = fileURLToPath(new URL('../public/fonts/', import.meta.url))
 
 // Familles et graisses réellement utilisées dans src/styles + src/components
 const FAMILIES =
-  'family=Inter:wght@400;500;600;700' +
+  'family=Great+Vibes' +
+  '&family=Inter:wght@400;500;600;700' +
   '&family=JetBrains+Mono:wght@400;600' +
   '&family=Poppins:wght@800' +
   '&family=Space+Grotesk:wght@500;600;700'

@@ -10,6 +10,10 @@
   backdrop-filter: blur(3px);
 }
 
+:root[data-theme='constellation'] .modal-overlay {
+  background: rgba(8, 8, 10, 0.75);
+}
+
 .modal {
   display: flex;
   flex-direction: column;

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Menu, Sparkles, X } from 'lucide-react'
 import Logo from './Logo.jsx'
+import { THEMES } from '@/hooks/useTheme.js'
 import './Navbar.css'
 
 const LINKS = [
@@ -12,7 +13,7 @@ const LINKS = [
   { href: '#contact', label: 'Contact' },
 ]
 
-function Navbar() {
+function Navbar({ theme, onToggleTheme }) {
   const [isOpen, setIsOpen] = useState(false)
   const [activeId, setActiveId] = useState('accueil')
   const observerRef = useRef(null)
@@ -50,17 +51,6 @@ function Navbar() {
           <Logo />
         </a>
 
-        <button
-          type="button"
-          className="navbar__burger"
-          aria-expanded={isOpen}
-          aria-controls="navbar-menu"
-          aria-label={isOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
-          onClick={() => setIsOpen((prev) => !prev)}
-        >
-          {isOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
-        </button>
-
         <ul
           id="navbar-menu"
           className={`navbar__menu ${isOpen ? 'navbar__menu--open' : ''}`}
@@ -78,6 +68,32 @@ function Navbar() {
             </li>
           ))}
         </ul>
+
+        <div className="navbar__actions">
+          <button
+            type="button"
+            className="navbar__theme-toggle"
+            aria-pressed={theme === THEMES.CONSTELLATION}
+            onClick={onToggleTheme}
+            title="Changer de thème"
+          >
+            <Sparkles aria-hidden="true" size={16} />
+            <span className="navbar__theme-toggle-label">
+              {theme === THEMES.CONSTELLATION ? 'Constellation' : 'Thème'}
+            </span>
+          </button>
+
+          <button
+            type="button"
+            className="navbar__burger"
+            aria-expanded={isOpen}
+            aria-controls="navbar-menu"
+            aria-label={isOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+            onClick={() => setIsOpen((prev) => !prev)}
+          >
+            {isOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+          </button>
+        </div>
       </nav>
     </header>
   )
