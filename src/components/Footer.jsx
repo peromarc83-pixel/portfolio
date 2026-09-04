@@ -11,8 +11,8 @@ function Footer() {
         <div className="footer__meta">
           <p className="footer__copy">© {year} Marc — Développeur web.</p>
           <nav className="footer__legal" aria-label="Informations légales">
-            <a href="/mentions-legales">Mentions légales</a>
-            <a href="/confidentialite">Confidentialité</a>
+            <a href="/mentions-legales.html">Mentions légales</a>
+            <a href="/confidentialite.html">Confidentialité</a>
           </nav>
         </div>
         <ul className="footer__socials" aria-label="Réseaux sociaux">

@@ -203,7 +203,7 @@ function Contact() {
           <p className="contact__consent">
             En envoyant ce formulaire, vous acceptez que vos coordonnées soient utilisées
             pour répondre à votre demande.{' '}
-            <a href="/confidentialite">En savoir plus</a>.
+            <a href="/confidentialite.html">En savoir plus</a>.
           </p>
         </form>
       </div>
